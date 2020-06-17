@@ -1,12 +1,12 @@
 function getAllFeature()
-%GETALLFEATURE ´Ë´¦ÏÔÊ¾ÓĞ¹Ø´Ëº¯ÊıµÄÕªÒª
-%   ´Ë´¦ÏÔÊ¾ÏêÏ¸ËµÃ÷
-path_test = 'E:/myProgram/python/deepLearning/model/Data_python/AlexNet/data_fold_crop_aug_CLAHE/1_fold/test1';
-path_train = 'E:/myProgram/python/deepLearning/model/Data_python/AlexNet/data_fold_crop_aug_CLAHE/1_fold/train1';
-path_all = 'E:/hpaData/del_notGood/all';
+%GETALLFEATURE æ­¤å¤„æ˜¾ç¤ºæœ‰å…³æ­¤å‡½æ•°çš„æ‘˜è¦
+%   æ­¤å¤„æ˜¾ç¤ºè¯¦ç»†è¯´æ˜
+%path_test = 'E:/myProgram/python/deepLearning/model/Data_python/AlexNet/data_fold_crop_aug_CLAHE/1_fold/test1';
+%path_train = 'E:/myProgram/python/deepLearning/model/Data_python/AlexNet/data_fold_crop_aug_CLAHE/1_fold/train1';
+path_all = '../all';
 path = path_all;
 %     for p = 2:2
-%         if p==2            % ±éÀúËùÓĞÎÄ¼ş
+%         if p==2            % éå†æ‰€æœ‰æ–‡ä»¶
 %             path = path_train;
 %         end
         imgDataDir = dir(path);   
@@ -14,7 +14,7 @@ path = path_all;
          for i = 1:length(imgDataDir)%1174 690 
             imgDir = dir([path imgDataDir(i).name '/*.jpg']); 
 %             for j =   4508:length(imgDir) 
-             for j =  877:length(imgDir) 
+             for j =  1:length(imgDir) 
                   readPath = [path  '/' imgDir(j).name];
                   S = regexp(imgDir(j).name, '_', 'split');
                   S{3}(end:end)=[];
@@ -28,8 +28,8 @@ path = path_all;
                   disp(j);
                   location = ['A',int2str(j)];
                   location1 = ['B',int2str(j)];
-                  xlswrite('C:\Users\ShifuBest\Downloads\code\feature\feature2.xlsx', feature, 'Sheet1',location1);
-                  xlswrite('C:\Users\ShifuBest\Downloads\code\feature\feature2.xlsx', {label}, 'Sheet1',location);
+                  xlswrite('..\feature\feature2.xlsx', feature, 'Sheet1',location1);
+                  xlswrite('..\feature\feature2.xlsx', {label}, 'Sheet1',location);
             end
         end
 %     end
