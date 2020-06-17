@@ -24,7 +24,7 @@ V = unique(V,'rows');
 H = findH( V, W);
 ...Note images without enough staining
 J = reconIH( I, H, j);
-[c b] = imhist(J(:,:,1));%灰度直方图
+[c b] = imhist(J(:,:,1));%禄脪露脠脰卤路陆脥录
 [a ind] = max(c);
 J(:,:,1) = J(:,:,1) - b(ind);
 [c b2] = imhist(J(:,:,2));
@@ -33,11 +33,11 @@ J(:,:,2) = J(:,:,2) - b2(ind2);
 ratio = sum(sum(J(:,:,2))) / sum(sum(J(:,:,1)));
 
 % % imwrite( img3, writepath, 'comment', readpath);
-if ratio<.5
+%if ratio<.5
     
-    disp(readpath);
-    xlswrite('E:/hpaData/not.xlsx',readpath);
-    writepath = strrep(writepath,'ProcessMultiLabel','not');
+ %   disp(readpath);
+ %   xlswrite('E:/hpaData/not.xlsx',readpath);
+ %   writepath = strrep(writepath,'ProcessMultiLabel','not');
 %     imwrite( 0, writepath, 'comment', readpath);
 %     fclose(fr);
 %     delete(pr);
