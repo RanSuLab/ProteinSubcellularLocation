@@ -1,18 +1,18 @@
 function processAll()
-%UNTITLED ´Ë´¦ÏÔÊ¾ÓĞ¹Ø´Ëº¯ÊıµÄÕªÒª
-%   ´Ë´¦ÏÔÊ¾ÏêÏ¸ËµÃ÷
-imgPath='E:/hpaData/Multilabel/';
-imgDataDir  = dir(imgPath);             % ±éÀúËùÓĞÎÄ¼ş
+%UNTITLED æ­¤å¤„æ˜¾ç¤ºæœ‰å…³æ­¤å‡½æ•°çš„æ‘˜è¦
+%   æ­¤å¤„æ˜¾ç¤ºè¯¦ç»†è¯´æ˜
+imgPath='../Multilabel/';
+imgDataDir  = dir(imgPath);             % éå†æ‰€æœ‰æ–‡ä»¶
 for i = 1:length(imgDataDir)
-%     if(isequal(imgDataDir(i).name,'.')||... % È¥³ıÏµÍ³×Ô´øµÄÁ½¸öÒşÎÄ¼ş¼Ğ
+%     if(isequal(imgDataDir(i).name,'.')||... % å»é™¤ç³»ç»Ÿè‡ªå¸¦çš„ä¸¤ä¸ªéšæ–‡ä»¶å¤¹
 %        isequal(imgDataDir(i).name,'..')||...
-%        ~imgDataDir(i).isdir)                % È¥³ı±éÀúÖĞ²»ÊÇÎÄ¼ş¼ĞµÄ
+%        ~imgDataDir(i).isdir)                % å»é™¤éå†ä¸­ä¸æ˜¯æ–‡ä»¶å¤¹çš„
 %            continue;
 %     end
     imgDir = dir([imgPath imgDataDir(i).name '/*.jpg']); 
     for j =1:length(imgDir)  
-        % ±éÀúËùÓĞÍ¼Æ¬
-        disp('µÚÕÅ');
+        % éå†æ‰€æœ‰å›¾ç‰‡
+        disp('ç¬¬å¼ ');
         disp(j);
         readPath = [imgPath imgDataDir(i).name '/' imgDir(j).name];%E:/hpaData/hpaAll../UBTF_cerebral+cortex_Nucleolus3.jpg
 
