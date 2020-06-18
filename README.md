@@ -17,6 +17,6 @@
   * **feature selection**  
     Using mrmr for feature selection.
   * **classification**  
-     * svmMutli-The classifier of multi-label
-     * svmSingle-The classifier of single-label
+     * svmMutli.py-The classifier of multi-label
+     * svmSingle.py-The classifier of single-label
 
