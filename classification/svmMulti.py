@@ -159,7 +159,7 @@ def svmMulti(pathfeature):
                         #                   header=False)
                         cnf_matrix = multilabel_confusion_matrix(y_true, y_prediction)
                         # print(cnf_matrix)
-                        fpr, tpr, thresholds = metrics.roc_curve(y_true.ravel(), y_prediction.ravel())
+                        fpr, tpr, thresholds = metrics.roc_curve(y_true.ravel(), probability.ravel())
                         roc_auc += auc(fpr, tpr)
                         TN = cnf_matrix[:, 0, 0]
                         TP = cnf_matrix[:, 1, 1]
