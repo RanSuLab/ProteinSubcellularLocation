@@ -5,6 +5,10 @@
   - python 3.6
   - tensorflow 1.12.0
 
+## Dataset
+  In the release.Tag is dataset1.0.
+  
+
 ## Usage
 
   * **ImageSeparation**  
@@ -20,3 +24,6 @@
      * svmMutli.py-The classifier of multi-label
      * svmSingle.py-The classifier of single-label
 
+## Applicable situation
+  Multi-label part of the algorithm is suitable for multi-label problems, and single-label part is suitable for multi-classification problems.
+  The algorithm can predict protein subcelluar location.
