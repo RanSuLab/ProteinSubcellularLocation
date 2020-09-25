@@ -26,4 +26,4 @@
 
 ## Applicable situation
   Multi-label part of the algorithm is suitable for multi-label problems, and single-label part is suitable for multi-classification problems.
-  The algorithm can predict protein subcelluar location.
+  This algorithm can used to predict protein subcelluar location.
