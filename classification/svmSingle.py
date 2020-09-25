@@ -73,12 +73,13 @@ def svmSingle(pathfeature):
                     clf = SVC(gamma=gamma_value, C=c_value, probability=True,random_state=0)
                     clf.fit(train_features,train_y)
                     prediction = clf.predict(test1_features)
+                    probability = clf.predict_proba(test1_features)
                     y_true = test_y
                     y_prediction = prediction
 
                     cnf_matrix = confusion_matrix(y_true, y_prediction)
                     # print(cnf_matrix)
-                    fpr, tpr, thresholds = metrics.roc_curve(y_true.ravel(), y_prediction.ravel())
+                    fpr, tpr, thresholds = metrics.roc_curve(y_true.ravel(), probability.ravel())
                     roc_auc += auc(fpr, tpr)
                     FP = cnf_matrix.sum(axis=0) - np.diag(cnf_matrix)
                     FN = cnf_matrix.sum(axis=1) - np.diag(cnf_matrix)
