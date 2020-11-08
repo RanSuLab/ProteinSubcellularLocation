@@ -299,9 +299,9 @@ def xception(inputs,
         #
         # return  end_points,logits
             fc_128 = tf.layers.dense(net, 128, activation=tf.nn.relu)
-            # out = tf.layers.dense(fc_128,2,activation=None)
+            out = tf.layers.dense(fc_128,2,activation=None)
             # out = tf.layers.dense(fc_128,classes,activation=None)
-            out = tf.layers.dense(fc_128, classes, activation=tf.nn.sigmoid)
+            #out = tf.layers.dense(fc_128, classes, activation=tf.nn.sigmoid)
             out = tf.squeeze(out, name='block15_logits')
         return fc_128, out
 
